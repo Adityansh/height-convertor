@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Height Converter</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>    
+</head>
+<body class="bg-dark">
+
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6 offset-md-3 col-sm-12">
+                <h3 class="display-4 text-center text-light mb-2">Height Converter</h3>
+                <form>
+                <input 
+                id="meter"
+                type="number"
+                placeholder="Enter height in meter..."
+                class="form-control form-control-lg mb-3"
+                >
+            </form>
+            </div>
+        </div>
+
+        <div id="output" class="text-light p-5">
+            <div class="card bg-primary mb-2">
+                <div class="card-block">
+                    <h4>Feets:</h4>
+                    <h2 id="feets"></h2>
+                </div>
+            </div>
+
+            <div class="card mb-2 bg-success">
+                <div class="card-block">
+                    <h4>Inches:</h4>
+                    <h2 id="inches"></h2>
+                </div>
+            </div>
+
+            <div class="card mb-2 bg-danger">
+                <div class="card-block">
+                    <h4>Cetimeters:</h4>
+                    <h2 id="cm"></h2>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+</body>
+<script>
+
+
+      document.getElementById('output').style.display = 'none';
+      document.getElementById("meter").addEventListener("input",function(e){
+        document.getElementById('output').style.display = 'block';    
+      let meter = e.target.value;
+      document.getElementById('feets').innerHTML = meter*3.281;  
+      document.getElementById('inches').innerHTML = meter*39.37;  
+      document.getElementById('cm').innerHTML = meter*100;  
+    })
+
+
+</script>
+
+</html>
